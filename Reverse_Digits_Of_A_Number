@@ -1,0 +1,14 @@
+def reverseOfDigits(n: Int): Int =
+    def recRes(curNum: Int, res: Int = 0, deci: Int = recCount(n)): Int =
+      if (curNum == 0) res
+      else recRes(curNum / 10, res + (curNum % 10) * deci, deci / 10)
+
+    def recCount(curNum: Int, dec: Int = 1): Int =
+      if (curNum < 10) dec
+      else recCount(curNum / 10, dec * 10)
+
+    recRes(n)
+    
+// Input -> 123, Output -> 321    
+    
+    
